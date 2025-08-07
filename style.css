@@ -78,7 +78,7 @@ body::before {
   display: block;
   width: 110px;
   height: 110px;
-  margin: 15px auto 5px; /* Margen superior reducido para subir la foto */
+  margin: 0px auto 15px; /* Margen superior reducido para subir la foto */
   border-radius: 50%;
   border: 3px solid var(--neon-red);
   box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple);
