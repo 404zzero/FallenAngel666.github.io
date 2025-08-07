@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberSmith | RedMatrix</title>
-    <!-- Favicon -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/43749971" type="image/x-icon" />
-    <!-- Fuente Cyberpunk -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeonPulse | CyberHub</title>
+  <!-- Favicon -->
+  <link rel="icon" href="https://tu-dominio.com/tu-foto.jpg" type="image/x-icon" />
+  <!-- Fuente Cyberpunk -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <!-- Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo de Código Dinámico -->
+  <div class="code-matrix">
+    <div class="code-line"></div>
+    <div class="code-line"></div>
+    <div class="code-line"></div>
+  </div>
 
-  <body>
-    <!-- Fondo de Rejilla Neón -->
-    <section class="neon-grid">
-      <div id="grid1"></div>
-      <div id="grid2"></div>
-      <div id="grid3"></div>
-    </section>
+  <!-- Panel Holográfico para Cambiar Fondo -->
+  <div class="holo-switch" onclick="switchTheme()">ACTIVAR MODO</div>
 
-    <!-- Botón para Cambiar Fondo -->
-    <button id="toggle-bg" onclick="toggleBackground()">Alternar Fondo</button>
+  <!-- Foto de Perfil -->
+  <div class="neon-avatar">
+    <img src="https://tu-dominio.com/tu-foto.jpg" alt="Tu Avatar Cyberpunk">
+  </div>
 
-    <!-- Avatar Principal -->
-    <a id="avatar" href="#data-vault">
-      <img src="https://avatars.githubusercontent.com/u/43749971" alt="Avatar de CyberSmith">
+  <!-- Nombre de Usuario -->
+  <div class="cyber-handle">TuNombre</div>
+
+  <!-- Enlaces de Conexión -->
+  <div class="link-grid">
+    <a href="https://yourblog.com" target="_blank" class="cyber-link">
+      <i class="fas fa-blog"></i> BitLog
     </a>
+    <a href="https://twitter.com/johnggli" target="_blank" class="cyber-link">
+      <i class="fab fa-twitter"></i> PulseStream
+    </a>
+    <a href="https://www.linkedin.com/in/johnggli" target="_blank" class="cyber-link">
+      <i class="fab fa-linkedin"></i> DataNode
+    </a>
+    <a href="https://www.hackthebox.eu/profile/johnggli" target="_blank" class="cyber-link">
+      <i class="fas fa-skull-crossbones"></i> CyberVault
+    </a>
+    <a href="https://github.com/johnggli" target="_blank" class="cyber-link">
+      <i class="fab fa-github"></i> CodeNexus
+    </a>
+  </div>
 
-    <!-- Vault de Datos (Popup) -->
-    <div class="data-vault-overlay" id="data-vault">
-      <div class="data-vault">
-        <div class="vault-message">
-          "En el neón del código, descifro el pulso de la matriz."
-        </div>
-        <a class="vault-close" onclick="history.back()">&times;</a>
-      </div>
+  <!-- Mensaje Holográfico (Popup) -->
+  <div class="holo-message" id="holo-display">
+    <div class="holo-content">
+      <p>El neón es mi hogar, el código mi arma.</p>
+      <a class="holo-close" href="#">X</a>
     </div>
+  </div>
 
-    <!-- Nombre de Usuario -->
-    <div id="handle">
-      @FallenAngel666
-    </div>
+  <!-- Tagline -->
+  <div class="neon-tag">#BreakTheCode</div>
 
-    <!-- Enlaces Neurales -->
-    <div id="neural-links">
-      <a class="link" href="https://github.com/johnggli" target="_blank">
-        <i class="fab fa-github"></i> CodeMatrix
-      </a>
-      <a class="link" href="https://www.linkedin.com/in/johnggli" target="_blank">
-        <i class="fab fa-linkedin"></i> NetConnect
-      </a>
-      <a class="link" href="https://twitter.com/johnggli" target="_blank">
-        <i class="fab fa-twitter"></i> DataPulse
-      </a>
-      <a class="link" href="https://www.hackthebox.eu/profile/johnggli" target="_blank">
-        <i class="fas fa-skull"></i> HackTheBox
-      </a>
-      <a class="link" href="https://yourblog.com" target="_blank">
-        <i class="fas fa-blog"></i> CyberLog
-      </a>
-    </div>
-
-    <!-- Tagline Cyberpunk -->
-    <div id="cyber-tag">
-      #CrackTheMatrix
-    </div>
-
-    <!-- Script para Cambiar Fondo -->
-    <script>
-      function toggleBackground() {
-        document.body.classList.toggle('light-mode');
-        const button = document.getElementById('toggle-bg');
-        button.textContent = document.body.classList.contains('light-mode') ? 'Fondo Oscuro' : 'Fondo Claro';
-      }
-    </script>
-  </body>
+  <!-- Script para Cambiar Tema -->
+  <script>
+    function switchTheme() {
+      document.body.classList.toggle('neon-mode');
+      const switchButton = document.querySelector('.holo-switch');
+      switchButton.textContent = document.body.classList.contains('neon-mode') ? 'MODO OSCURO' : 'MODO CLARO';
+    }
+  </script>
+</body>
 </html>
