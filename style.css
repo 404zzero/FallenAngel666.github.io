@@ -6,6 +6,8 @@
   --neon-white: #ffffff;
   --dark-matrix: #1a0000;
   --shadow-purple: #330033;
+  --light-bg: #f5e6e6;
+  --light-shadow: #ffccff;
   --glitch-delay: .5s;
 }
 
@@ -20,42 +22,71 @@ body {
   background-size: cover;
   position: relative;
   overflow-x: hidden;
+  transition: background 0.5s ease;
+}
+
+body.light-mode {
+  background: linear-gradient(180deg, var(--light-bg) 0%, var(--light-shadow) 100%);
+}
+
+#toggle-bg {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--neon-red);
+  color: var(--neon-white);
+  border: 2px solid var(--neon-purple);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--neon-red);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+#toggle-bg:hover {
+  background: var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple);
+  animation: glitchButton 0.2s infinite;
 }
 
 #avatar, #avatar img {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   display: block;
-  margin: 60px auto 30px;
+  margin: 70px auto 30px;
   border-radius: 50%;
   border: 3px solid var(--neon-red);
-  box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple);
+  box-shadow: 0 0 25px var(--neon-red), 0 0 50px var(--neon-purple);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 #avatar:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 30px var(--neon-red), 0 0 60px var(--neon-purple);
+  transform: scale(1.2);
+  box-shadow: 0 0 35px var(--neon-red), 0 0 70px var(--neon-purple);
   animation: glitchAvatar 0.3s infinite;
 }
 
 #handle {
   color: var(--neon-white);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-purple);
-  margin-bottom: 25px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple);
+  margin-bottom: 30px;
   animation: glitchText 2s infinite;
 }
 
 #neural-links {
-  max-width: 720px;
+  max-width: 750px;
   width: 90%;
-  margin: 35px auto;
+  margin: 40px auto;
 }
 
 .link {
@@ -63,21 +94,21 @@ body {
   background: transparent;
   color: var(--neon-white);
   border: 3px solid var(--neon-purple);
-  border-radius: 10px;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
   text-align: center;
   padding: 15px;
-  margin: 12px;
+  margin: 15px;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple);
 }
 
 .link:hover {
   background: var(--neon-purple);
   color: var(--neon-white);
-  box-shadow: 0 0 25px var(--neon-purple), 0 0 50px var(--neon-red);
+  box-shadow: 0 0 30px var(--neon-purple), 0 0 60px var(--neon-red);
   animation: glitchButton 0.2s infinite;
 }
 
@@ -86,14 +117,13 @@ body {
   color: var(--dark-matrix);
 }
 
-/* Tagline con Efecto Glitch */
 #cyber-tag {
   color: var(--neon-white);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
   text-transform: uppercase;
-  padding-bottom: 40px;
-  text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-purple);
+  padding-bottom: 50px;
+  text-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple);
   animation: glitchText 1.8s infinite;
 }
 
@@ -104,35 +134,35 @@ body {
 }
 
 @keyframes glitchText {
-  0% { transform: translate(0); }
-  10% { transform: translate(-3px, 3px); text-shadow: 3px 0 var(--neon-red), -3px 0 var(--neon-purple); }
-  20% { transform: translate(3px, -3px); text-shadow: -3px 0 var(--neon-red), 3px 0 var(--neon-purple); }
-  30% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(0); text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-purple); }
+  0% { transform: translate(0); text-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple); }
+  10% { transform: translate(-4px, 4px); text-shadow: 4px 0 var(--neon-red), -4px 0 var(--neon-purple); }
+  20% { transform: translate(4px, -4px); text-shadow: -4px 0 var(--neon-red), 4px 0 var(--neon-purple); }
+  30% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -3px); }
+  50% { transform: translate(0); text-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-purple); }
   100% { transform: translate(0); }
 }
 
 @keyframes glitchAvatar {
   0% { transform: translate(0); }
-  20% { transform: translate(-4px, 4px); }
-  40% { transform: translate(4px, -4px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(2px, -2px); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, -5px); }
+  60% { transform: translate(-3px, 3px); }
+  80% { transform: translate(3px, -3px); }
   100% { transform: translate(0); }
 }
 
 @keyframes glitchButton {
   0% { transform: translate(0); }
-  25% { transform: translate(-2px, 2px); }
-  50% { transform: translate(2px, -2px); }
-  75% { transform: translate(-1px, 1px); }
+  25% { transform: translate(-3px, 3px); }
+  50% { transform: translate(3px, -3px); }
+  75% { transform: translate(-2px, 2px); }
   100% { transform: translate(0); }
 }
 
 @keyframes neonGrid {
   from { transform: translateY(0); }
-  to { transform: translateY(-2500px); }
+  to { transform: translateY(-3000px); }
 }
 
 /* Vault de Datos (Popup) */
@@ -162,43 +192,37 @@ body {
   width: 90%;
   background: var(--shadow-purple);
   border: 3px solid var(--neon-red);
-  box-shadow: 0 0 25px var(--neon-red), 0 0 50px var(--neon-purple);
+  box-shadow: 0 0 30px var(--neon-red), 0 0 60px var(--neon-purple);
   transform: scale(0);
   transition: transform 0.7s ease-in-out, top 0.7s ease-in-out;
-}
-
-.avatar-vault img {
-  width: 100%;
-  height: auto;
-  border-bottom: 3px solid var(--neon-purple);
 }
 
 .vault-message {
   color: var(--neon-white);
   font-family: 'Orbitron', sans-serif;
   font-style: italic;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
-  font-size: 1.1rem;
-  text-shadow: 0 0 10px var(--neon-red);
+  font-size: 1.2rem;
+  text-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-purple);
   animation: glitchText 2.2s infinite;
 }
 
 .vault-close {
   position: absolute;
-  top: -1.8rem;
-  right: -1.8rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  font-size: 2.2rem;
-  line-height: 3.5rem;
+  top: -2rem;
+  right: -2rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
   text-align: center;
   background: var(--neon-red);
   color: var(--neon-white);
   border-radius: 50%;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 0 20px var(--neon-red);
+  box-shadow: 0 0 25px var(--neon-red);
 }
 
 .vault-close:hover {
@@ -234,45 +258,50 @@ body {
 }
 
 #grid1 {
-  animation: neonGrid 80s linear infinite;
+  animation: neonGrid 70s linear infinite;
   box-shadow:
-    150px 250px var(--neon-red), 350px 550px var(--neon-purple),
-    550px 850px var(--neon-white), 750px 1150px var(--neon-red),
-    950px 1450px var(--neon-purple), 1150px 1750px var(--neon-white);
+    100px 200px var(--neon-red), 300px 500px var(--neon-purple),
+    500px 800px var(--neon-white), 700px 1100px var(--neon-red),
+    900px 1400px var(--neon-purple), 1100px 1700px var(--neon-white);
 }
 
 #grid2 {
-  animation: neonGrid 120s linear infinite;
+  animation: neonGrid 100s linear infinite;
   box-shadow:
-    200px 300px var(--neon-purple), 400px 600px var(--neon-white),
-    600px 900px var(--neon-red), 800px 1200px var(--neon-purple);
+    150px 250px var(--neon-purple), 350px 550px var(--neon-white),
+    550px 850px var(--neon-red), 750px 1150px var(--neon-purple);
 }
 
 #grid3 {
-  animation: neonGrid 160s linear infinite;
+  animation: neonGrid 130s linear infinite;
   box-shadow:
-    250px 350px var(--neon-white), 450px 650px var(--neon-red),
-    650px 950px var(--neon-purple), 850px 1250px var(--neon-white);
+    200px 300px var(--neon-white), 400px 600px var(--neon-red),
+    600px 900px var(--neon-purple), 800px 1200px var(--neon-white);
 }
 
 /* Diseño Responsivo */
 @media (max-width: 600px) {
   #avatar, #avatar img {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
 
   .link {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 12px;
   }
 
   .vault-message {
-    font-size: 0.95rem;
-    padding: 20px;
+    font-size: 1rem;
+    padding: 25px;
   }
 
   #handle, #cyber-tag {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
-}
+
+  #toggle-bg {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+  }
