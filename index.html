@@ -15,12 +15,15 @@
   </head>
 
   <body>
-    <!-- Fondo de Rejilla Neón con Glitch -->
+    <!-- Fondo de Rejilla Neón -->
     <section class="neon-grid">
       <div id="grid1"></div>
       <div id="grid2"></div>
       <div id="grid3"></div>
     </section>
+
+    <!-- Botón para Cambiar Fondo -->
+    <button id="toggle-bg" onclick="toggleBackground()">Alternar Fondo</button>
 
     <!-- Avatar Principal -->
     <a id="avatar" href="#data-vault">
@@ -30,13 +33,8 @@
     <!-- Vault de Datos (Popup) -->
     <div class="data-vault-overlay" id="data-vault">
       <div class="data-vault">
-        <div class="avatar-vault">
-          <a href="https://avatars.githubusercontent.com/u/43749971" target="_blank">
-            <img src="https://avatars.githubusercontent.com/u/43749971" alt="Avatar de CyberSmith">
-          </a>
-        </div>
         <div class="vault-message">
-          "En el caos del código, encuentro la verdad del neón."
+          "En el neón del código, descifro el pulso de la matriz."
         </div>
         <a class="vault-close" onclick="history.back()">&times;</a>
       </div>
@@ -70,5 +68,14 @@
     <div id="cyber-tag">
       #CrackTheMatrix
     </div>
+
+    <!-- Script para Cambiar Fondo -->
+    <script>
+      function toggleBackground() {
+        document.body.classList.toggle('light-mode');
+        const button = document.getElementById('toggle-bg');
+        button.textContent = document.body.classList.contains('light-mode') ? 'Fondo Oscuro' : 'Fondo Claro';
+      }
+    </script>
   </body>
 </html>
